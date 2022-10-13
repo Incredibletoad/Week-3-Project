@@ -1,0 +1,48 @@
+# Show the Fun Title
+print(r"""
+
+   ___     _   _             _____       _____                __  __  U _____ u  _    
+  / " \ U |"|u| |   ___     |"_  /u     |_ " _|     ___     U|' \/ '|u\| ___"|/U|"|u  
+ | |"| | \| |\| |  |_"_|    U / //        | |      |_"_|    \| |\/| |/ |  _|"  \| |/  
+/| |_| |\ | |_| |   | |     \/ /_        /| |\      | |      | |  | |  | |___   |_|   
+U \__\_\u<<\___/  U/| |\u   /____|      u |_|U    U/| |\u    |_|  |_|  |_____|  (_)   
+   \\// (__) )(.-,_|___|_,-._//<<,-     _// \\_.-,_|___|_,-.<<,-,,-.   <<   >>  |||_  
+  (_(__)    (__)\_)-' '-(_/(__) (_/    (__) (__)\_)-' '-(_/  (./  \.) (__) (__)(__)_) 
+
+""")
+
+questions = ("Q1: America was founded in 1776", "Q2: DDay occured on December 8th, 1944", "There have been 46 US Presidents" )
+answers = ("T".lower(), "F".lower(), "T".lower)
+
+#Len of elements in tuple questions saved to variable
+numberOfQuestions = len(questions)
+#counter for correct answers
+correctAnswers = 0
+#empty list to store answer values from user
+userAnswers = []
+
+#for loop
+#range(numberOfQuestions) is range(int)
+for index in range(numberOfQuestions):
+  print(questions[index])
+  #prompt for answer
+  userAnswer = input("\tAnswer: ")
+  #while user input doesn't equal the corresponding answer
+  while userAnswer != "T".lower() and userAnswer != "F".lower():
+    #re-prompt user
+    userAnswer = input("\tAnswer: ")
+  #user entered correct answer. Append to list
+  userAnswers.append(userAnswer)
+  
+#Keep track of correct answers
+#If user answer for corresponding element (question) is correct
+if userAnswers[0] == "T".lower():
+  #add to counter
+  correctAnswers += 1
+if userAnswers[1] == "F".lower():
+  correctAnswers +=1
+if userAnswers[2] == "T".lower():
+  correctAnswers +=1
+
+#format string to auto pull correct answers
+print(f"You got {correctAnswers} right!")
